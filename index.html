@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  </head>
+<body ng-app="NarrowItDownApp"><!--app name-->
+
+  <div class="container" ng-controller="NarrowItDownController as menu"><!-- addcontroller -->
+      <h1>Narrow Down Your Chinese Menu Choice</h1>
+    <div class="form-group">
+          
+    </div>
+    <input type="text" ng-model="menu.itemName" placeholder="Enter iteam name to begin search.....  ">
+    <div class="form-group narrow-button">
+      <button class="btn btn-primary" ng-click="menu.getMatchedMenuItems();">Narrow It Down For Me!</button>
+   </div>
+    <ul>
+
+          <found-items ng-repeat="item in menu.items">{{item}}</found-items>
+        <!--li ng-repeat="item in menu.items"> </li>       
+    
+          <button ng-click="menu.onRemove({index: $index});">Remove Item</button-->
+     <!--found-items items="menu.items" on-remove="menu.removeItem(index)">{{item}}</found-items-->
+   </ul>
+  </div>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  
+
+</body>
+</html
