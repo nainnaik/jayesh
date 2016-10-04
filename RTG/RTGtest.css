@@ -1,6 +1,5 @@
 .navbar-brand h1{	
 	font-size:1.5em;	
-	
 	margin-top:0;
 	margin-bottom:0;
 	line-height: .75;	
@@ -37,19 +36,22 @@ hr{
 	
 	background-image: url("./img/Capitol.jpg");
 	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center; 
 	color: black;
 	font-family: 'Playfair Display', serif;
 	font-size: 18px;
-	padding:15px;
 	width:100%;
-	height:80%;
+	height:100%;
+	
 }
-.row{
+#seprator{
 	background-color:#917926;
 	color:white;
 	font-size: 18px;
 	padding:15px;
 }
+
 @media (max-width:768px){
 	
 		.navbar-brand p{
@@ -62,4 +64,6 @@ hr{
 	vertical-align: middle;
 
 	}
+
+	
 }
