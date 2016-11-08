@@ -1,5 +1,7 @@
 (function  (global) {
+	
 	var ajaxUtils={};
+
 	function getRequestObject(){
 		if (window.XMLHttpRequest){ return(new XMLHttpRequest());
 		}
@@ -16,10 +18,10 @@
 	ajaxUtils.sendGetRequest =function(requestUrl,responseHandler,isJsonResponse){
 		var request= getRequestObject();
 
-		resuest.onreadystatechange = function(){ 	
+		request.onreadystatechange = function(){ 	
 			handleResponse(request,responseHandler,isJsonResponse);
 		};
-		request.opem("GET",requestUrl,true);
+		request.open("GET",requestUrl,true);
 		request.send(null);
 	};
 
@@ -42,7 +44,7 @@
 
 	//expose utility
 
-	global.$ajaxUtils=ajaxUtils;
+	global.$ajaxUtils = ajaxUtils;
 
 
-})();
+})(window);
