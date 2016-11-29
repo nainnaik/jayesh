@@ -1,0 +1,16 @@
+<div class="container" >
+	<div class=" jumbotron">
+		<button ng-click= "ctrl.doSort('category')"> Menu By Category</button>
+		<button ng-click= "ctrl.doSort('name')"> Menu By Name</button>
+		<button ng-click= "ctrl.doSort('price')"> Menu By Price</button>
+	</div>
+		<div class="col-sm-8 menu" data-ng-repeat="rest in ctrl.recipes|orderBy:ctrl.sortBy:ctrl.reverse">
+			
+			<h2>Category : {{rest.category}}</h2>
+			<h1>Name : {{rest.name}}</h1>
+			<p> Ingradients : {{rest.ingradients}} </p>
+			<p>Price : {{rest.price}}</p>			
+		</div>
+		
+</div>
+

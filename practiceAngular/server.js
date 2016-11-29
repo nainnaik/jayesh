@@ -1,6 +1,4 @@
-(function(){
-	var restaurantService= function(){
-		var recipes=[
+var recipes=[
                     {
                         name:'SPECIAL KABAB PLATTER',
                         image:'png',
@@ -44,16 +42,3 @@
             	];     
 
 		
-		this.getRecipes=function(){
-			console.log("called get recipes function");
-			return recipes;
-
-		};
-		
-
-	};
-	restaurantService.$inject=[]
-
-	angular.module("restaurantModule").service("RestaurantService",restaurantService);
-
-})();

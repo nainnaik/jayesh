@@ -6,7 +6,7 @@
 			$routeProvider
 				.when('/',{
 					controller: 'restaurantController',
-					templateUrl: 'index.html'				
+					templateUrl: '../practiceAngular/view/recipes.html'				
 				})
 				
 				.otherwise({ redirectTo:'/' });
