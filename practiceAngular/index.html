@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="restaurantModule">
+<head>
+	<title>angularjs </title>
+	<meta charset="UTF-8">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style type="text/css">
+	.menu{
+		color: #546582;
+	}
+
+	</style>
+</head>
+<body data-ng-controller="RestaurantController as ctrl">
+
+<div class="container" >
+	<div class=" jumbotron">
+		<button ng-click= "ctrl.doSort('category')"> Menu By Category</button>
+		<button ng-click= "ctrl.doSort('name')"> Menu By Name</button>
+		<button ng-click= "ctrl.doSort('price')"> Menu By Price</button>
+	</div>
+		<div class="col-sm-8 menu" data-ng-repeat="rest in ctrl.recipes|orderBy:ctrl.sortBy:ctrl.reverse">
+			
+			<h2>Category : {{rest.category}}</h2>
+			<h1>Name : {{rest.name}}</h1>
+			<p> Ingradients : {{rest.ingradients}} </p>
+			<p>Price : {{rest.price}}</p>			
+		</div>
+		
+</div>
+
+
+
+<script src="../practiceAngular/script/angular.min.js"></script>
+<script src="../practiceAngular/script/angular-route.min.js"></script>
+<script src="../practiceAngular/module.js"> //module file </script>
+<script src="../practiceAngular/controller/restaurantController.js"> //controller</script>
+<script src="../practiceAngular/services/restaurantServices.js"></script>
+
+
+
+</body>
+</html>

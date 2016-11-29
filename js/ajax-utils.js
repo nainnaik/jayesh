@@ -3,7 +3,8 @@
 	var ajaxUtils={};
 
 	function getRequestObject(){
-		if (window.XMLHttpRequest){ return(new XMLHttpRequest());
+		if (window.XMLHttpRequest){
+		 return(new XMLHttpRequest());
 		}
 		else if(window.ActiveXObject){
 			return (new ActiveXObject("Microsoft.XMLHTTP"));
@@ -33,12 +34,8 @@
 			}
 
 			if (isJsonResponse){
-				responseHandler(json.parse(request.responseText));
+				responseHandler(JSON.parse(request.responseText));
 			}
-			else{
-				responseHandler(request.responseText);
-			}
-
 		}
 	}
 
