@@ -1,0 +1,33 @@
+
+<div class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+		     	 <a class="navbar-brand"> 	<img alt="Recipe" src="..."> </a>
+		    </div>		    	
+
+			<ul class="nav navbar-nav">
+				<li> <a ng-click= "doSort('category')"> Menu By Category </a></li>
+				<li> <a ng-click= "doSort('name')"> Menu By Name</a> </li>
+				<li> <a ng-click= "doSort('price')"> Menu By Price </a> </li>
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+	<div class="row row-content" data-ng-repeat="rest in recipes|orderBy:sortBy:reverse">	
+		<div class="col-xs-12">
+			<div> <hr/>
+				<h1> Category : {{rest.category}}</h1><hr> 
+			</div>		
+			<div class="media-left">
+				<img class="media-object" ng-src={{rest.image}} alt="" width="15%">
+
+				<div class="media-body">
+					<h3 class="media-heading">{{rest.name}}</h3>	
+					<p><b> Ingradients </b>: {{rest.ingradients}}</p>
+					<p> Price : {{rest.price}}</p>	
+				</div>	
+			</div>	
+		</div>		
+	</div>
+	</div>
+</div>
