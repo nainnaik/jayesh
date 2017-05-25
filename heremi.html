@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="uft-8">
+	<title></title>
+	<style>
+		div{
+			background-color: #db1374;
+			font-size: 35px;
+			padding: 100px;
+			margin:0 auto;
+			width:80%;
+			border-radius: 10px;
+			}
+	</style>
+</head>
+<body>
+	<div id="location"></div>
+
+
+	<script>
+	window.onload= getMyLocation;
+	function getMyLocation(){
+		if(navigator.geolocation){
+			navigator.geolocation.getCurrentPosition(displayLocation);			
+		}else{
+			alert("Oops,no geoloaction support");
+		}
+	}
+	function displayLocation(position){
+		var latitude=position.coords.latitude;
+		var longitude=position.coords.longitude;
+		var div =document.getElementById('location');
+		div.innerHTML="you are at Latitude: " + latitude +", longitude" + longitude;
+
+	}
+	</script>
+</body>
+</html>
